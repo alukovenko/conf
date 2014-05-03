@@ -98,7 +98,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias t='tail -n 1000 -f'
-#alias t='tail -n 10000 -f | /home/aluck/bin/fix_perl_utf'
+alias ack='ack --color'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
