@@ -15,6 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tComment'
 Plugin 'ack.vim'
 Plugin 'molokai'
+Plugin 'mojo.vim'
 " Plugin 'The-NERD-tree'
 
 " All of your Plugins must be added before the following line
