@@ -51,6 +51,11 @@ set statusline+=\ [%{&ff}/%Y]            " filetype
 set statusline+=\ [%{getcwd()}]          " current dir
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 
+set number
+set numberwidth=5
+
+set cursorline
+
 " set ruler
 set history=500
 
@@ -72,30 +77,16 @@ set smarttab
 set scrolloff=3
 set pastetoggle=<F12>
 
+" search
 set hlsearch
 set incsearch
 
+" code folding
 set foldmethod=indent
 set foldlevelstart=1
-set foldcolumn=2
+set foldcolumn=4
 
 set fileencodings=utf-8,cp1251,koi8-r
 set termencoding=utf8
 set fileencodings=utf-8,cp1251,koi8-r
-
-" Define functions
-function! PoundComment()
-    map - :s/^/# /<CR> :noh<CR>
-    map _ :s/^\s*# \=//<CR> :noh<CR>
-    set comments=:#
-endfunction
-
-function! SlashComment()
-    map - :s/^/\/\/ /<CR> :noh<CR>
-    map _ :s/^\s*\/\/ \=//<CR> :noh<CR>
-endfunction
-
-autocmd FileType perl call PoundComment()
-autocmd FileType sh call PoundComment()
-autocmd FileType java call SlashComment()
 
