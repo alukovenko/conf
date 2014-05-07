@@ -106,3 +106,10 @@ set fileencodings=utf-8,cp1251,koi8-r
 set termencoding=utf8
 set fileencodings=utf-8,cp1251,koi8-r
 
+if has("autocmd")
+    filetype on
+
+    autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+endif
+
