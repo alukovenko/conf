@@ -16,10 +16,18 @@ Plugin 'tComment'
 Plugin 'ack.vim'
 Plugin 'molokai'
 Plugin 'mojo.vim'
-" Plugin 'The-NERD-tree'
+" Plugin 'L9'
+" Plugin 'FuzzyFinder'
+Plugin 'The-NERD-tree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
+" fuzzy finder
+"nmap ,f :FufFileWithCurrentBufferDir<CR>
+"nmap ,b :FufBuffer<CR>
+"nmap ,t :FufTaggedFile<CR>
+nnoremap <C-e> :NERDTreeToggle<CR>
 
 filetype plugin indent on    " required
 
@@ -65,26 +73,30 @@ set completeopt=menu
 
 syntax on
 set nobackup
-set ignorecase
 set swapsync=
 map <F8> :e ++enc=utf-8 
 map <S-F8> :e ++enc=cp1251
+
+" tab
 set expandtab 
 set shiftwidth=4 
+set softtabstop=4
 set tabstop=4
-set smartcase
 set smarttab
-set scrolloff=3
-set pastetoggle=<F12>
 
 " search
 set hlsearch
 set incsearch
+set smartcase
+set ignorecase
 
 " code folding
 set foldmethod=indent
 set foldlevelstart=1
 set foldcolumn=4
+
+set scrolloff=3
+set pastetoggle=<F12>
 
 set fileencodings=utf-8,cp1251,koi8-r
 set termencoding=utf8
