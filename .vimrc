@@ -92,8 +92,12 @@ set ignorecase
 
 " code folding
 set foldmethod=indent
-set foldlevelstart=1
-set foldcolumn=4
+set foldlevelstart=99
+set foldcolumn=2
+
+" list chars
+set listchars=tab:▸\ ,eol:¬
+nmap <leader>l :set list!<CR>
 
 set scrolloff=3
 set pastetoggle=<F12>
