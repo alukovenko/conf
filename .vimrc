@@ -19,6 +19,7 @@ Plugin 'mojo.vim'
 " Plugin 'L9'
 " Plugin 'FuzzyFinder'
 Plugin 'The-NERD-tree'
+Plugin 'ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
