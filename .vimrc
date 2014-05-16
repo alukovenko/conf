@@ -32,11 +32,6 @@ nnoremap <C-e> :NERDTreeToggle<CR>
 
 filetype plugin indent on    " required
 
-colorscheme molokai
-" colorscheme desert
-let g:molokai_original = 1
-set background=dark
-
 " https://github.com/ik5/dotvim/blob/master/vimrc
 
 if has("gui_running")
@@ -51,6 +46,11 @@ endif
 
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
+
+colorscheme molokai
+" colorscheme desert
+let g:molokai_original = 1
+set background=dark
 
 " statusline
 set statusline=%<%f\                     " Filename
