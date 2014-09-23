@@ -20,6 +20,8 @@ Plugin 'mojo.vim'
 " Plugin 'FuzzyFinder'
 Plugin 'The-NERD-tree'
 Plugin 'ctrlp.vim'
+" https://github.com/othree/javascript-libraries-syntax.vim
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,8 +33,6 @@ call vundle#end()            " required
 nnoremap <C-e> :NERDTreeToggle<CR>
 
 filetype plugin indent on    " required
-
-" https://github.com/ik5/dotvim/blob/master/vimrc
 
 if has("gui_running")
     set guifont=Monaco\ 9,Droid\ Sans\ Mono\ 10,Andale\ Mono\ Regular\ 10,\ Liberation\ Mono\ 9
