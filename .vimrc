@@ -32,6 +32,10 @@ call vundle#end()            " required
 "nmap ,t :FufTaggedFile<CR>
 nnoremap <C-e> :NERDTreeToggle<CR>
 
+nnoremap <C-n> :tabnew<CR>
+nnoremap <C-l> gt
+nnoremap <C-h> gT
+
 filetype plugin indent on    " required
 
 if has("gui_running")
