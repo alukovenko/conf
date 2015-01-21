@@ -14,14 +14,15 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tComment'
 Plugin 'ack.vim'
-Plugin 'molokai'
+" Plugin 'molokai'
+" Plugin 'flazz/vim-colorschemes'
 Plugin 'mojo.vim'
 " Plugin 'L9'
 " Plugin 'FuzzyFinder'
 Plugin 'The-NERD-tree'
 Plugin 'ctrlp.vim'
 " https://github.com/othree/javascript-libraries-syntax.vim
-Plugin 'othree/javascript-libraries-syntax.vim'
+" Plugin 'othree/javascript-libraries-syntax.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,16 +37,20 @@ nnoremap <C-n> :tabnew<CR>
 nnoremap <C-l> gt
 nnoremap <C-h> gT
 
+set tags=~/tags
+
 filetype plugin indent on    " required
 
+" https://github.com/ik5/dotvim/blob/master/vimrc
+
+set background=dark
 if has("gui_running")
     set guifont=Monaco\ 9,Droid\ Sans\ Mono\ 10,Andale\ Mono\ Regular\ 10,\ Liberation\ Mono\ 9
     set guioptions-=T   " Toolbars off (icons on top of the screen)
 else
     set t_Co=256
-    "let g:solarized_termcolors=256
+    let g:solarized_termcolors=256
     let g:solarized_termtrans=1
-    let g:rehash256 = 1
 endif
 
 let g:solarized_contrast="high"
@@ -53,8 +58,9 @@ let g:solarized_visibility="high"
 
 colorscheme molokai
 " colorscheme desert
+" colorscheme monokain
 let g:molokai_original = 1
-set background=dark
+let g:rehash256 = 1
 
 " statusline
 set statusline=%<%f\                     " Filename
@@ -82,12 +88,13 @@ set swapsync=
 map <F8> :e ++enc=utf-8 
 map <S-F8> :e ++enc=cp1251
 
+map <F9> :CtrlPTag<CR>
+map <F10> :!cd ~; ctags -R --languages=perl<CR> 
+
 " tab
-set expandtab 
 set shiftwidth=4 
 set softtabstop=4
 set tabstop=4
-set smarttab
 
 " search
 set hlsearch
@@ -111,6 +118,9 @@ set fileencodings=utf-8,cp1251,koi8-r
 set termencoding=utf8
 set fileencodings=utf-8,cp1251,koi8-r
 
+set expandtab
+set smarttab
+ 
 if has("autocmd")
     filetype on
 
@@ -118,3 +128,4 @@ if has("autocmd")
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
+source ~/.vimrc_local
