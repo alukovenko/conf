@@ -7,6 +7,15 @@ export LESS=' -R'
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+# agent
+. ~/conf/.ssh-find-agent
+set_ssh_agent_socket
+
+if [ -z "$SSH_AUTH_SOCK" ]
+then
+	eval $(ssh-agent) > /dev/null
+	ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+fi
 
 alias json2human="perl -MJSON -MData::Dumper -ne 'use utf8; print Dumper( JSON::from_json( \$_ ) ), \$/;' | fix_perl_utf"
 alias gs="find . \( -name '*.p[ml]' -o -name '*.t' -o -name '*.html' \) | xargs grep --color=always "
