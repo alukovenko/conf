@@ -22,6 +22,7 @@ Plugin 'mojo.vim'
 " Plugin 'FuzzyFinder'
 Plugin 'The-NERD-tree'
 Plugin 'ctrlp.vim'
+" Plugin 'bling/vim-airline'
 " https://github.com/othree/javascript-libraries-syntax.vim
 " Plugin 'othree/javascript-libraries-syntax.vim'
 
@@ -82,6 +83,8 @@ set history=500
 set wildmenu                             " show list instead of just completing
 set wildmode=list:longest,full           " command <Tab> completion, list matches, then longest common part, then all.
 set completeopt=menu    
+
+set laststatus=2
 
 syntax on
 set nobackup

@@ -17,7 +17,8 @@ then
 	ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 fi
 
-alias json2human="perl -MJSON -MData::Dumper -ne 'use utf8; print Dumper( JSON::from_json( \$_ ) ), \$/;' | fix_perl_utf"
+alias json2human="sed '1 s/^(\xef\xbb\xbf|\xfe\xff)//' | perl -MJSON::XS -MData::Dumper -ne 'use utf8; print Dumper( JSON::XS::decode_json( \$_ ) ), \$/;' "
+# alias json2human="perl -MJSON::XS -MData::Dumper -ne 'use utf8; print Dumper( JSON::from_json( \$_ ) ), \$/;' | fix_perl_utf"
 alias gs="find . \( -name '*.p[ml]' -o -name '*.t' -o -name '*.html' \) | xargs grep --color=always "
 alias prove="prove -I ../extlib/ -I ../protected/ "
 alias tmux="tmux -2"
