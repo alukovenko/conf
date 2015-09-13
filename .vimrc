@@ -22,13 +22,21 @@ Plugin 'mojo.vim'
 " Plugin 'FuzzyFinder'
 Plugin 'The-NERD-tree'
 Plugin 'ctrlp.vim'
-" Plugin 'bling/vim-airline'
 " https://github.com/othree/javascript-libraries-syntax.vim
 " Plugin 'othree/javascript-libraries-syntax.vim'
+" Bundle 'Lokaltog/vim-powerline'
 
 " All of your Plugins must be added before the following line
+if !empty(glob("~/.vimrc_local_plugins"))
+    source ~/.vimrc_local_plugins
+end
+
 call vundle#end()            " required
 
+set laststatus=2
+" set encoding=utf-8
+" set t_Co=256
+" let g:Powerline_symbols = 'fancy'
 " fuzzy finder
 "nmap ,f :FufFileWithCurrentBufferDir<CR>
 "nmap ,b :FufBuffer<CR>
@@ -84,8 +92,6 @@ set wildmenu                             " show list instead of just completing
 set wildmode=list:longest,full           " command <Tab> completion, list matches, then longest common part, then all.
 set completeopt=menu    
 
-set laststatus=2
-
 syntax on
 set nobackup
 set swapsync=
@@ -132,4 +138,9 @@ if has("autocmd")
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
-source ~/.vimrc_local
+au BufNewFile,BufRead *.gradle setf groovy
+
+if !empty(glob("~/.vimrc_local"))
+    source ~/.vimrc_local
+end
+
