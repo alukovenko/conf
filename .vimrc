@@ -22,6 +22,7 @@ Plugin 'mojo.vim'
 " Plugin 'FuzzyFinder'
 Plugin 'The-NERD-tree'
 Plugin 'ctrlp.vim'
+Bundle 'chase/vim-ansible-yaml'
 " https://github.com/othree/javascript-libraries-syntax.vim
 " Plugin 'othree/javascript-libraries-syntax.vim'
 " Bundle 'Lokaltog/vim-powerline'

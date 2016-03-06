@@ -133,3 +133,17 @@ fi
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
+
+dig +short -t txt istheinternetonfire.com
+
+function genpwd() {
+    if [[ -z $1 ]]; then
+        len=8
+    else
+        len=$1
+    fi
+
+    for i in {1..10}; do
+        cat /dev/urandom | tr -cd [:alnum:] | head -c"$len"; echo;
+    done
+}
